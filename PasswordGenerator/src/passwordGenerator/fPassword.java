@@ -210,7 +210,6 @@ public class fPassword extends javax.swing.JFrame {
         // TODO add your handling code here:
         String text = txtResult.getText();
 
-        // input to clipboard
         StringSelection selection = new StringSelection(text);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
 
