@@ -25,6 +25,3 @@ Below is the visual look of the application in action:
 | Setup Interface | Generated Password |
 |---|---|
 | ![Step 1](https://github.com/user-attachments/assets/1c36a609-b7ab-424f-a72a-bf780d207528) | ![Step 2](https://github.com/user-attachments/assets/520bfbc0-065d-43e5-83c1-b3c07554c394) |
-
----
-**Developed by [GhifarMR](https://github.com/GhifarMR)**
