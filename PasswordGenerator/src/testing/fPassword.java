@@ -5,6 +5,7 @@
 package testing;
 
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -156,9 +157,21 @@ public class fPassword extends javax.swing.JFrame {
             character += symbols;
         }
         
+        String length = txtLength.getText().trim();
+        if((length.isEmpty()) || (length.equals("0"))) {
+            JOptionPane.showMessageDialog(this, 
+                    "invalid input", 
+                    "Attention", 
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         if(character.isEmpty()) {
-            txtResult.setText("choose at least one option");
-            
+            JOptionPane.showMessageDialog(this, 
+                    "select at least one option", 
+                    "Attention", 
+                    JOptionPane.ERROR_MESSAGE);
+            return;
         }
         
         char[] characterArray = character.toCharArray();
@@ -170,7 +183,7 @@ public class fPassword extends javax.swing.JFrame {
         StringBuilder password = new StringBuilder();
         
         for(int i = 0; i < passwordLength; i++) {
-            randomNumber = random.nextInt(0, 78);
+            randomNumber = random.nextInt(0, characterArray.length);
             password.append(characterArray[randomNumber]);
         }
         
