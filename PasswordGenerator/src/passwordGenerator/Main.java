@@ -4,8 +4,6 @@
  */
 package passwordGenerator;
 
-import java.util.Random;
-
 /**
  *
  * @author macbookair
