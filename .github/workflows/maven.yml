@@ -1,14 +1,14 @@
-name: Build Java Ant Project
+name: Build and Release Java Ant Project
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+    tags:
+      - 'v*'
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write 
 
     steps:
     - name: Checkout Repository
@@ -25,8 +25,7 @@ jobs:
         cd PasswordGenerator
         ant compile jar
 
-    - name: Upload Runnable JAR
-      uses: actions/upload-artifact@v4
+    - name: Release Executable JAR to GitHub Releases
+      uses: softprops/action-gh-release@v2
       with:
-        name: PasswordGenerator-Release
-        path: PasswordGenerator/dist/*.jar
+        files: PasswordGenerator/dist/*.jar
